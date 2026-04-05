@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  /* Vert */
+  --font-sans: var(--font-roboto);
+  --font-display: var(--font-poppins);
+  --color-v: #30BE86;
+  --bg-v*: #30BE86;
+  --text-v*: #30BE86;
+  --border-v*: #30BE86;
+  --ring-v*: #30BE86;
+  
+  /* Bleu #222c5f */
+  --color-b: #222c5f;
+  --bg-b*: #222c5f;
+  --text-b*: #222c5f;
+  --border-b*: #222c5f;
+  --ring-b*: #222c5f;
+
+ 
+
+
+}
+
+.roboto {
+  font-family: var(--font-roboto), sans-serif;
+}
+
+.poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+
+
