@@ -8,7 +8,7 @@ export default function Banner() {
         alt="l'entre-deux "
         width={1000}
         height={400}
-        className="w-screen absolute"
+        className="w-screen absolute object-cover"
         priority={true}
       />
     </div>
