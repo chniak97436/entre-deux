@@ -1,1 +1,0 @@
-- [x] Step 1: Edit components/NavBar.js to add "Patrimoine" dropdown item with sub-links "Histoire" (/patrimoine/histoire) and "Bibliographie" (/patrimoine/bibliographie) following "La Mairie" pattern.

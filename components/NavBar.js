@@ -51,8 +51,8 @@ export default function NavBar() {
         </div>
         {/* -----------------------MENUE OLNCLICK--------------------- */}
         {isOpen && (
-          <div className=" w-full mt-14 text-center z-40 p-2  fade-in-0 zoom-in-95  duration-500">
-            <nav className="w-50 bg-[#d8fcfcd8]  fixed right-0 space-y-0 px-0.5">
+          <div className=" w-screen mt-14 text-center z-40 p-2  fade-in-0 zoom-in-95  duration-500">
+            <nav className="w-2/3 bg-[#d8fcfcd8]  fixed right-0 space-y-0 px-0.5 md:w-1/3 lg:w-1/4">
               {/* ITEM AVEC SOUS-MENU & FLÈCHE */}
               <div className="relative group">
                 <div className="flex items-center justify-between p-3 font-bold text-b border border-transparent hover:border-[#8bfdfd] hover:bg-white/50 transition-all cursor-pointer">
