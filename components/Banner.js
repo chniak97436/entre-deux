@@ -6,9 +6,9 @@ export default function Banner() {
       <Image
         src={"/banniere.jpg"}
         alt="l'entre-deux "
-        width={1000}
-        height={400}
-        className="w-screen absolute object-cover"
+        width={1024}
+        height={30}
+        className="w-screen h-50 md:h-100 lg:h-120 object-cover"
         priority={true}
       />
     </div>

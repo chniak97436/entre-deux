@@ -29,7 +29,7 @@ export default function NavBar() {
         </Link>
 
         <h1 className="absolute left-1/2 -translate-x-1/2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl whitespace-nowrap  sm:block">
-          Comunne de l'Entre-Deux
+          Village de l'Entre-Deux
         </h1>
         {/* ------------------HAMBURGERS BUTTON----------------------------------- */}
         <div className="w-12 h-12 fixed right-1">
@@ -70,7 +70,7 @@ export default function NavBar() {
                   />
                   <h1
                     href="/#"
-                    className="flex-1 font-bold  text-b text-sm md:text-xl lg:text-2xl xl:text-4xl"
+                    className="flex-1 font-bold  text-b text-sm md:text-2xl "
                     onClick={(e) => {
                       e.stopPropagation();
                       submenuOpen ? setSubmenuOpen(false) : setSubmenuOpen(true);
@@ -83,7 +83,7 @@ export default function NavBar() {
                 <div className={`flex flex-col absolute left-[-201px] top-0 w-50 bg-[#d8fcfcd8] shadow-xl border border-emerald-100 animate-in fade-in zoom-in-95 ${submenuOpen ? 'block' : 'hidden'}`}>
                   <Link
                     href="/mairie/elus"
-                    className="p-1 text-sm font-bold text-b hover:bg-emerald-50 hover:text-v md:text-xl lg:text-2xl xl:text-4xl"
+                    className="p-1 text-sm font-bold text-b hover:bg-emerald-50 hover:text-v md:text-xl "
                     onClick={() => {
                       setIsOpen(false);
                       setSubmenuOpen(false);
