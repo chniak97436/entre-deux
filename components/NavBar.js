@@ -28,7 +28,7 @@ export default function NavBar() {
           />
         </Link>
 
-        <h1 className="absolute left-1/2 -translate-x-1/2 font-bold text-lg md:text-xl lg:text-2xl whitespace-nowrap  sm:block">
+        <h1 className="absolute left-1/2 -translate-x-1/2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl whitespace-nowrap  sm:block">
           Comunne de l'Entre-Deux
         </h1>
         {/* ------------------HAMBURGERS BUTTON----------------------------------- */}
@@ -55,7 +55,7 @@ export default function NavBar() {
         {/* -----------------------MENUE OLNCLICK--------------------- */}
         {isOpen && (
           <div className=" w-screen mt-14 text-center z-40 p-2  fade-in-0 zoom-in-95  duration-500">
-            <nav className="w-2/3 bg-[#d8fcfcd8]  fixed right-0 space-y-0 px-0.5 md:w-1/3 lg:w-1/4">
+            <nav className="w-3/5 bg-[#d8fcfcd8]  fixed right-0 space-y-0 px-0.5 md:w-1/3 lg:w-1/4">
               {/* ITEM AVEC SOUS-MENU & FLÈCHE */}
               <div
                 className="relative group"
@@ -69,8 +69,8 @@ export default function NavBar() {
                     className={`transition-transform duration-300 ${submenuOpen ? 'rotate-90' : ''} text-b`}
                   />
                   <Link
-                    href="/mairie"
-                    className="flex-1 font-bold"
+                    href="/#"
+                    className="flex-1 font-bold  text-b text-sm md:text-xl lg:text-2xl xl:text-4xl"
                     onClick={(e) => {
                       e.stopPropagation();
                       setIsOpen(false);
@@ -83,7 +83,7 @@ export default function NavBar() {
                 <div className={`flex flex-col absolute left-[-201px] top-0 w-50 bg-[#d8fcfcd8] shadow-xl border border-emerald-100 animate-in fade-in zoom-in-95 ${submenuOpen ? 'block' : 'hidden'}`}>
                   <Link
                     href="/mairie/elus"
-                    className="p-1 text-sm font-bold text-b hover:bg-emerald-50 hover:text-v"
+                    className="p-1 text-sm font-bold text-b hover:bg-emerald-50 hover:text-v md:text-xl lg:text-2xl xl:text-4xl"
                     onClick={() => {
                       setIsOpen(false);
                       setSubmenuOpen(false);
@@ -93,7 +93,7 @@ export default function NavBar() {
                   </Link>
                   <Link
                     href="/mairie/histoire"
-                    className="p-1 text-sm font-bold text-b hover:bg-emerald-50 hover:text-v"
+                    className="p-1 text-sm font-bold text-b hover:bg-emerald-50 hover:text-v md:text-xl lg:text-2xl xl:text-4xl"
                     onClick={() => {
                       setIsOpen(false);
                       setSubmenuOpen(false);
@@ -104,7 +104,7 @@ export default function NavBar() {
 
                   <Link
                     href="/mairie/demarches"
-                    className="p-1 text-sm font-bold text-b hover:bg-emerald-50 hover:text-v"
+                    className="p-1 text-sm md:text-xl lg:text-2xl xl:text-4xl font-bold text-b hover:bg-emerald-50 hover:text-v"
                     onClick={() => {
                       setIsOpen(false);
                       setSubmenuOpen(false);
@@ -114,7 +114,7 @@ export default function NavBar() {
                   </Link>
                   <Link
                     href="/mairie/demarches"
-                    className="p-1 text-sm font-bold text-b hover:bg-emerald-50 hover:text-v"
+                    className="p-1 text-sm md:text-xl lg:text-2xl xl:text-4xl font-bold text-b hover:bg-emerald-50 hover:text-v"
                     onClick={() => {
                       setIsOpen(false);
                       setSubmenuOpen(false);
@@ -127,35 +127,35 @@ export default function NavBar() {
 
               <Link
                 href="/actualites"
-                className="block px-2 py-2 font-bold text-lg border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
+                className="block px-2 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
                 onClick={() => setIsOpen(false)}
               >
                 Enfance
               </Link>
               <Link
                 href="/evenements"
-                className="block  px-1 py-2 font-bold text-lg border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
+                className="block  px-1 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
                 onClick={() => setIsOpen(false)}
               >
                 Adenda et Actualités
               </Link>
               <Link
                 href="/services"
-                className="block px-2 py-2 font-bold text-lg border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
+                className="block px-2 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
                 onClick={() => setIsOpen(false)}
               >
                 Sortie à l Entre-Deux
               </Link>
               <Link
                 href="/contact"
-                className="block px-2 py-2 font-bold text-lg border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
+                className="block px-2 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
                 onClick={() => setIsOpen(false)}
               >
                 Divertissement
               </Link>
               <Link
                 href="/contact"
-                className="block px-2 py-2 font-bold text-lg border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
+                className="block px-2 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
                 onClick={() => setIsOpen(false)}
               >
                 Innovations
