@@ -55,7 +55,7 @@ export default function NavBar() {
         {/* -----------------------MENUE OLNCLICK--------------------- */}
         {isOpen && (
           <div className=" w-screen mt-14 text-center z-40 p-2  fade-in-0 zoom-in-95  duration-500">
-            <nav className="w-3/5 bg-[#d8fcfcd8]  fixed right-0 space-y-0 px-0.5 md:w-1/3 lg:w-1/4">
+            <nav className="w-2.5/5 bg-[#d8fcfcd8]  fixed right-0 space-y-0 px-0.5 md:w-1/3 lg:w-1/4">
               {/* ITEM AVEC SOUS-MENU & FLÈCHE */}
               <div
                 className="relative group"
@@ -68,16 +68,16 @@ export default function NavBar() {
                     size={18}
                     className={`transition-transform duration-300 ${submenuOpen ? 'rotate-90' : ''} text-b`}
                   />
-                  <Link
+                  <h1
                     href="/#"
                     className="flex-1 font-bold  text-b text-sm md:text-xl lg:text-2xl xl:text-4xl"
                     onClick={(e) => {
                       e.stopPropagation();
-                      setIsOpen(false);
+                      submenuOpen ? setSubmenuOpen(false) : setSubmenuOpen(true);
                     }}
                   >
                     La Mairie
-                  </Link>
+                  </h1>
                 </div>
                 {/* SOUS-MENU (Apparaît au hover) */}
                 <div className={`flex flex-col absolute left-[-201px] top-0 w-50 bg-[#d8fcfcd8] shadow-xl border border-emerald-100 animate-in fade-in zoom-in-95 ${submenuOpen ? 'block' : 'hidden'}`}>
