@@ -26,13 +26,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className=" h-screen w-full flex flex-col overflow-x-hidden">
-      <body className=" min-h-screen min-w-full flex flex-col overflow-x-hidden bg-[#e5fafad8]/95 ">
-        <ArowBack/>
-        <NavBar />
-        <Banner />
+    <html lang="fr">
+      <body className={`${roboto.variable} ${poppins.variable} font-sans antialiased min-h-screen`}>
         {children}
-        <Footer/>
       </body>
     </html>
   );

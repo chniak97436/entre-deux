@@ -1,7 +1,20 @@
-# TODO - Fix Hover Mobile NavBar
+# Task: Add onClick to MapPinned for geolocation itinerary to 2 Rue Fortune Hoarau
 
-- [x] 1. Ajouter states et useEffect dans NavBar.js
-- [x] 2. Modifier div "La Mairie" pour onClick/touch et states
-- [x] 3. Update sous-menu classes et liens
-- [ ] 4. Tester : npm run dev + mobile emulator
-- [ ] 5. Valider et fermer TODO
+Layouts restructurés ✅ No superposition/duplicates
+
+**app/layout.js**: Minimal shell (html/body/fonts).
+**app/page.js**: Home layout complet (NavBar/Banner/main/Footer).
+**app/mail/layout.js**: Mail personal (NavBar/ArowBack/main/Footer, gradient, sans Banner).
+
+**Résultat:**
+- / : Home design with Banner.
+- /mail : Personal mail design, no overlap.
+- Flex heights fixés, 1 NavBar each.
+
+Dev restarted. Test http://localhost:3000/mail & / .
+
+## New Task Steps:
+- [x] Create/update TODO.md with plan steps
+- [x] Edit components/Arow-back.js: Add handleMapClick with geolocation, directions URL, onClick to MapPinned div + cursor-pointer
+- [ ] Test functionality
+- [ ] Finalize TODO and complete
