@@ -8,7 +8,7 @@ export default function Banner() {
         alt="l'entre-deux "
         width={1024}
         height={30}
-        className="w-screen h-50 md:h-100 lg:h-120 object-cover"
+        className="w-screen h-60 md:h-100 lg:h-120 object-cover"
         priority={true}
       />
     </div>
