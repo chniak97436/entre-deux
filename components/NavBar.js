@@ -14,7 +14,7 @@ export default function NavBar() {
   }, [isOpen]);
 
   return (
-    <nav className="w-screen h-14 bg-[#e5fafad8]/95 backdrop-blur-sm sticky top-0 flex shadow-lg shadow-emerald-400/30 z-50 border-b border-[#b2fdfd]/80 text-b">
+    <nav className="w-screen h-14 bg-[#e5fafad8]/95 backdrop-blur-sm fixed top-0 flex shadow-lg shadow-emerald-400/30 z-50 border-b border-[#b2fdfd]/80 text-b">
       <div className="w-full max-w-7xl mx-auto h-14 flex items-center justify-between px-1 md:px-1 lg:px-1">
         <Link href="/" className="">
           <Image
@@ -167,3 +167,4 @@ export default function NavBar() {
     </nav>
   );
 }
+

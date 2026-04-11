@@ -1,20 +1,9 @@
-# Task: Add onClick to MapPinned for geolocation itinerary to 2 Rue Fortune Hoarau
+# Task: Make NavBar immovable (fixed)
 
-Layouts restructurés ✅ No superposition/duplicates
+## Steps:
+- [x] Step 1: Update NavBar.js sticky → fixed top-0.
+- [x] Step 2: Add pt-14 to page content below NavBar in app/page.js.
 
-**app/layout.js**: Minimal shell (html/body/fonts).
-**app/page.js**: Home layout complet (NavBar/Banner/main/Footer).
-**app/mail/layout.js**: Mail personal (NavBar/ArowBack/main/Footer, gradient, sans Banner).
+- [ ] Step 3: Verify and complete.
 
-**Résultat:**
-- / : Home design with Banner.
-- /mail : Personal mail design, no overlap.
-- Flex heights fixés, 1 NavBar each.
-
-Dev restarted. Test http://localhost:3000/mail & / .
-
-## New Task Steps:
-- [x] Create/update TODO.md with plan steps
-- [x] Edit components/Arow-back.js: Add handleMapClick with geolocation, directions URL, onClick to MapPinned div + cursor-pointer
-- [ ] Test functionality
-- [ ] Finalize TODO and complete
+Current progress: Starting Step 1.
