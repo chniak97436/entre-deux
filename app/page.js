@@ -12,6 +12,7 @@ export default function Home() {
       <ArowBack />
       <NavBar />
       <div className="flex-1">
+        <Iris />
         <Banner />
         <Iris />
         <main className="max-w-7xl mx-auto p-6 md:p-6">
@@ -19,9 +20,9 @@ export default function Home() {
           <h1 className="text-xl text-center  font-bold text-b mb-8 md:text-4xl">Bienvenue à l'Entre-Deux</h1>
             <Cards />
           <div className="prose max-w-none">
-            <h1>hhhhh</h1>
           </div>
         </main>
+            <Iris />
         <Footer />
       </div>
     </div>

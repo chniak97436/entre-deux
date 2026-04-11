@@ -4,28 +4,40 @@ import Link from "next/link";
 export default function Cards({ title, imageSrc }) {
   const cardData = [
     {
-      title: "Card 1",
+      title: "Permanences en mairie",
+      imageSrc: "/permanences-du-Maire.png",
+      text: "Découvrez les permanences en mairie de L'Entre-Deux, avec les horaires et les services disponibles pour les habitants de la commune."
+    },
+    {
+      title: "Inscriptions scolaires 2026-2027",
       imageSrc: "/Inscriptions-scolaires-2026-2027_0.png",
+      text: "Découvrez les démarches pour les inscriptions scolaires à L'Entre-Deux pour l'année 2026-2027, avec les dates clés et les documents nécessaires pour inscrire votre enfant dans les écoles de la commune."
     },
     {
-      title: "Card 2",
+      title: "Koze Jeunes",
       imageSrc: "/Koze-jeunes-web.jpg",
+      text: "Koze Jeunes est un programme dédié aux jeunes de L'Entre-Deux, offrant des activités éducatives, culturelles et sportives pour favoriser leur épanouissement et leur engagement dans la vie locale."
     },
     {
-      title: "Card 3",
+      title: "Risque cyclonique",
       imageSrc: "/Plaq-Risque-Cyclonique-Reunion-verso-web_0.jpg",
+      text: "Informez-vous sur les mesures de prévention et les consignes de sécurité en cas de risque cyclonique à L'Entre-Deux, pour protéger votre famille et votre domicile pendant la saison des cyclones."
     },
     {
-      title: "Card 4",
+      title: "SICR Déchets REP",
       imageSrc: "/SICR-Dechets-REP.jpg",
+      text: "Le SICR Déchets REP est un service de gestion des déchets à L'Entre-Deux, proposant des solutions de tri, de collecte et de recyclage pour réduire l'impact environnemental et promouvoir une commune plus propre."
     },
     {
-      title: "Card 5",
+      title: "Investiture du Maire",
       imageSrc: "/Investiture maire-Circulations.png",
+      text: "Découvrez les détails de l'investiture du nouveau maire de L'Entre-Deux et les promesses qu'il a formulées pour améliorer la vie locale."
+
     },
     {
-      title: "Card 6",
+      title: "L'Entre-Deux en vidéo",
       imageSrc: "/entre-deux-en-video-bg_1.jpg",
+      text: "Découvrez L'Entre-Deux à travers une vidéo immersive qui met en valeur la beauté naturelle, la culture et les événements de cette charmante commune de La Réunion."
     }
   ];
 
@@ -49,7 +61,7 @@ export default function Cards({ title, imageSrc }) {
           </div>
           <div className="p-6">
             <h2 className="text-xl md:text-2xl font-bold mb-3 group-hover:text-v transition-colors">{card.title}</h2>
-            <p className="text-sm opacity-80 mb-12 text-b/90">Découvrir cette actualité importante pour l'Entre-Deux</p>
+            <p className="text-sm opacity-80 mb-12 text-b/90">{card.text}</p>
           </div>
           <Link 
             href="/details" 

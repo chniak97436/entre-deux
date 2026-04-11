@@ -22,7 +22,7 @@ export default function NavBar() {
             alt="Commune de L'Entre-Deux"
             width={42}
             height={42}
-            className="border-2  border-[#8bfdfd] hover:shadow-emerald-300/50"
+            className="border-2 border-[#8bfdfd] hover:shadow-emerald-300/50"
             loading="eager"
             priority={true}
           />
