@@ -5,7 +5,7 @@ export default function Cards({ title, imageSrc }) {
   const cardData = [
     {
       title: "Permanences en mairie",
-      imageSrc: "/permanences-du-Maire.png",
+      imageSrc: "/Permanences-du-Maire.png",
       text: "Découvrez les permanences en mairie de L'Entre-Deux, avec les horaires et les services disponibles pour les habitants de la commune."
     },
     {

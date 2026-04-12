@@ -1,9 +1,8 @@
-# Task: Make NavBar immovable (fixed)
+# Task: Adjust white iris to be proportional to h-7
 
 ## Steps:
-- [x] Step 1: Update NavBar.js sticky → fixed top-0.
-- [x] Step 2: Add pt-14 to page content below NavBar in app/page.js.
-
-- [ ] Step 3: Verify and complete.
-
-Current progress: Starting Step 1.
+- [x] 1. Confirm plan with user
+- [x] 2. Edit components/Iris.js with proportional background adjustments (remove object-cover, fix bg-b to bg-bottom, add bg-cover for scaling)
+- [x] 3. Preview changes with `npm run dev`
+- [x] 4. Verify visual proportionality in browser (iris PNG scales properly in h-7 height)
+- [x] 5. Mark complete and attempt_completion
