@@ -42,7 +42,7 @@ export default function Cards() {
   ];
 
   return ( 
-    <div className="w-full max-w-7xl mx-auto p-6 md:p-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="w-full mx-auto  md:p-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {cardData.map((card, index) => (
         <div 
           key={index} 
@@ -52,7 +52,7 @@ export default function Cards() {
             <Image 
               src={card.imageSrc} 
               alt={card.title} 
-              width={400} 
+              width={1000} 
               height={200} 
               className="w-full h-48 md:h-56 object-cover group-hover:scale-110 transition-transform duration-500" 
               priority={index < 3}
