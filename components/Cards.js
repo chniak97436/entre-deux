@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Cards({ title, imageSrc }) {
+export default function Cards() {
   const cardData = [
     {
       title: "Permanences en mairie",
