@@ -57,7 +57,7 @@ export default function Cards() {
               className="w-full h-48 md:h-56 object-cover group-hover:scale-110 transition-transform duration-500" 
               priority={index < 3}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-b/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-top from-b/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
           <div className="p-6">
             <h2 className="text-xl md:text-2xl font-bold mb-3 group-hover:text-v transition-colors">{card.title}</h2>
@@ -65,7 +65,7 @@ export default function Cards() {
           </div>
           <Link 
             href="/details" 
-            className="absolute  inset-0 flex items-end p-4 bg-gradient-to-t from-b/60 group-hover:from-b/80"
+            className="absolute  inset-0 flex items-end p-4 bg-gradient-to-top from-b/60 group-hover:from-b/80"
             aria-label={`Voir plus sur ${card.title}`}
           >
             <span className="text-white font-bold  text-base md:text-lg poppins bg-v/90 px-4 py-2 rounded-lg shadow-lg hover:bg-v hover:shadow-emerald-300/50 transition-all duration-300 w-full text-center">VOIR PLUS</span>
