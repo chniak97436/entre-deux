@@ -4,7 +4,11 @@
 
 **Étapes :**
 
-### 1. [✅ DONE] Éditer Cards.js"
+### 1. [✅ DONE] Éditer Cards.js - État actuel SAUVEGARDÉ comme base de référence (remise à zéro possible si demandé)\n- Code carousel optimisé (scroll, snap, boutons desktop/mobile).\n- Hydration fixée (className single-line).\n**⚠️ COMMANDE: 'remise à zero' → restauration exacte de cet état.**"
+</xai:function_call >
+
+<xai:function_call name="create_file">
+<parameter name="absolute_path">c:/Users/urban/Desktop/entre-deux/Cards.backup.js
 </xai:function_call">
 
 <xai:function_call name="execute_command">
