@@ -57,7 +57,7 @@ export default function Cards() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
           <div>
-            <h2 className="text-3xl font-bold text-[#1a3a3a]">À la une</h2>
+            <h2 className="text-2xl font-bold text-v">À SAVOIR</h2>
             <p className="text-emerald-600 text-sm font-medium md:hidden animate-bounce mt-2">
               ← Glissez pour voir →
             </p>

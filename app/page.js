@@ -25,20 +25,20 @@ export default function Home() {
         <Iris />
 
         <main className="w-[90%] mx-auto mt-6 md:mt-12">
-          <hr className="my-6 text-b/90" />
           <p className="text-center text-v text-sm pb-6 md:pb-6"><strong>Ouverture mairie :</strong> du lundi au jeudi de 7h45 à 16h15 - <strong>Fermeture</strong> à 15h le vendredi <br /> <strong>Contact :</strong> 0 262 39 50 50 </p>
-          <h1 className="text-xl text-center  font-bold text-b mb-8 md:text-4xl">Bienvenue à l'Entre-Deux</h1>
-          <hr className="my-6 text-b/90" />
+          <hr className="my-6 text-b" />
 
           <AlaUne />
 
           <hr className="my-6 text-b/90" />
-          
+
+        </main>
+        <Iris />
           <Cards />
+
 
           <div className="prose max-w-none">
           </div>
-        </main>
         <Iris />
         <Footer />
       </div>
