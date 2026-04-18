@@ -1,6 +1,6 @@
 "use client"
 import Banner from "../components/Banner";
-import NavBar from "../components/NavBar.js";
+import NavBar from "../components/NavBar.fixed.js";
 import ArowBack from "../components/Arow-back";
 import Footer from "../components/Footer.js";
 import Iris from "../components/Iris";

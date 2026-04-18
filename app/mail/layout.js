@@ -1,6 +1,6 @@
 "use client"
 import ArowBack from '../../components/Arow-back';
-import NavBar from '../../components/NavBar.js';
+import NavBar from '../../components/NavBar.fixed.js';
 import Footer from '../../components/Footer.js';
 
 export default function MailLayout({ children }) {
