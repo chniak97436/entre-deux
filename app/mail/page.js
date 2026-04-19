@@ -36,7 +36,7 @@ export default function page() {
     return (
         <>
             <form onSubmit={(e) => formSubmit(e)}
-                className="flex flex-col w-[90%] mt-10 mx-auto border border-emerald-300 rounded-lg shadow-xl p-2 md:p-6 lg:p-12 bg-gradient-to-br from-slate-50 to-emerald-100">
+                className="flex flex-col w-[90%] mt-10 mx-auto border border-emerald-300 rounded-lg shadow-xl p-2 md:p-6 lg:p-12 bg-gradient-to-br from-slate-100 to-emerald-100">
                 <h1 className='text-xl text-center text-b font-bold roboto'>NOUS CONTACTER...!</h1>
                 <div className='shadow-lg p-4'>
                     <label htmlFor="email" className="block text-v text-sm font-medium my-4">Votre adresse e-mail:</label>

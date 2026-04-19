@@ -1,4 +1,4 @@
- "use client";
+"use client";
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -52,7 +52,7 @@ export default function NavBar() {
         {/* -----------------------MENU ONCLICK--------------------- */}
         {isOpen && (
           <div className="w-screen mt-14 text-center z-40 p-2 fade-in-0 zoom-in-95 duration-500">
-            <nav className="w-2.5/5 bg-[#d8fcfcd8] fixed right-0 space-y-0 px-0.5 md:w-1/3 lg:w-1/4">
+            <nav className="w-2.5/5 bg-[#d8fcfcd8] fixed right-0 space-y-0 px-0.5 md:w-1/3 lg:w-1/3">
               {/* ITEM AVEC SOUS-MENU & FLÈCHE */}
               <div
                 className="relative group"
@@ -60,6 +60,10 @@ export default function NavBar() {
                 onTouchStart={() => setSubmenuOpen(true)}
               >
                 <div className="flex items-center justify-between p-3 font-bold text-b border border-transparent hover:border-[#8bfdfd] hover:bg-white/50 transition-all cursor-pointer active:bg-white/30">
+                  <ChevronDown
+                    size={18}
+                    className={`transition-transform duration-300 ml-2 ${submenuOpen ? '-rotate-90' : ''} text-b`}
+                  />
                   <h1
                     href="#"
                     className="flex-1 font-bold text-b text-sm md:text-2xl"
@@ -70,10 +74,7 @@ export default function NavBar() {
                   >
                     La Mairie
                   </h1>
-                  <ChevronDown
-                    size={18}
-                    className={`transition-transform duration-300 ml-2 ${submenuOpen ? '-rotate-90' : ''} text-b`}
-                  />
+
                 </div>
                 {/* SOUS-MENU - Style coherent avec main menu, left border, responsive */}
                 <div className={`flex flex-col absolute z-50 right-0 left-auto top-full mt-1 -left-72 md:-left-64 lg:-left-48 origin-top-left w-56 md:w-64 lg:w-72 xl:w-80 max-w-[90vw] min-w-52 bg-[#d8fcfcd8] backdrop-blur-sm shadow-2xl shadow-emerald-400/30 border border-[#b2fdfd] animate-in fade-in zoom-in-95 ${submenuOpen ? 'block' : 'hidden'}`}>
@@ -125,7 +126,16 @@ export default function NavBar() {
                 className="block px-2 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
                 onClick={() => setIsOpen(false)}
               >
-                Enfance
+                <h1
+                  href="#"
+                  className="flex-1 font-bold text-b text-center ml-4 text-sm md:text-2xl"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    submenuOpen ? setSubmenuOpen(false) : setSubmenuOpen(true);
+                  }}
+                >
+                  Enfance
+                </h1>
               </Link>
               <Link
                 href="/evenements"
