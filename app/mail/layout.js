@@ -5,10 +5,10 @@ import Footer from '../../components/Footer.js';
 
 export default function MailLayout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-emerald-50 overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-emerald-200 overflow-hidden">
       <ArowBack />
       <NavBar />
-      <main className="flex-1 max-w-4xl mx-auto p-6 md:p-12">
+      <main className="flex flex-1 flex-col w-screen h-screen justify-center items-center mx-auto p-6 md:p-12">
         {children}
       </main>
       <Footer />
