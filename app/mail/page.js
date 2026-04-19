@@ -5,7 +5,7 @@ import Iris from '../../components/Iris';
 export default function page() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [success, setSuccess] = useState(false);
+    const [success, setSuccess] = useState(null);
     const [loading, setLoading] = useState(false);
 
     const formSubmit = async (e) => {
@@ -24,6 +24,7 @@ export default function page() {
                 setEmail('');
                 setMessage('');
             } else {
+                setSuccess(false);
                 console.error('Erreur lors de l\'envoi du message');
             }
         } catch (error) {
@@ -35,9 +36,9 @@ export default function page() {
     return (
         <>
             <form onSubmit={(e) => formSubmit(e)}
-                className="flex flex-col w-[90%] border border-emerald-300 rounded-lg shadow-xl p-4">
+                className="flex flex-col w-[90%] mt-10 mx-auto border border-emerald-300 rounded-lg shadow-xl p-2 md:p-6 lg:p-12 bg-gradient-to-br from-slate-50 to-emerald-100">
                 <h1 className='text-xl text-center text-b font-bold roboto'>NOUS CONTACTER...!</h1>
-                <div className='shadow-lg'>
+                <div className='shadow-lg p-4'>
                     <label htmlFor="email" className="block text-v text-sm font-medium my-4">Votre adresse e-mail:</label>
                     <input
                         type="email"
@@ -49,7 +50,7 @@ export default function page() {
                         required
                     />
                 </div>
-                <div className='shadow-lg'>
+                <div className='shadow-lg p-4'>
                     <label htmlFor="message" className="block text-v text-sm font-medium my-4">Votre message:</label>
                     <textarea
                         id="message"
@@ -63,12 +64,13 @@ export default function page() {
                 </div>
                 <button
                     type="submit"
-                    className="mt-4 bg-emerald-500 text-white py-2 px-4 rounded-md hover:bg-emerald-600 transition-colors disabled:bg-gray-400"
+                    className="mt-8 bg-emerald-500 text-white py-2 px-4 shadow-md rounded-md hover:bg-emerald-600 transition-colors disabled:bg-gray-400"
                     disabled={loading}
                 >
                     {loading ? 'Envoi...' : 'Envoyer'}
                 </button>
-                {success && <p className="text-green-500 mt-4">Message envoyé avec succès !</p>}
+                {success && <p className="text-green-500 my-4">Message envoyé avec succès !</p>}
+                {success ===false && <p className="text-center text-red-500 my-4">Une erreur est survenue.</p>}
             </form>
         </>
     )
