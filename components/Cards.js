@@ -55,9 +55,9 @@ export default function Cards() {
   return (
     <div className="w-full bg-gray-50 py-10">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-around items-center mb-8">
           <div>
-            <h2 className="text-2xl font-bold text-v">À SAVOIR</h2>
+            <h2 className="text-2xl font-bold text-v">À SAVOIR :</h2>
             <p className="text-emerald-600 text-sm font-medium md:hidden animate-bounce mt-2">
               ← Glissez pour voir →
             </p>
@@ -65,7 +65,7 @@ export default function Cards() {
           <div className="hidden md:flex gap-3">
             <button 
               onClick={() => handleScroll("left")}
-              className="p-3 bg-white border border-emerald-100 rounded-full shadow-sm hover:bg-emerald-500 hover:text-white transition-all"
+              className="p-3 bg-v text-b border border-emerald-100 rounded-full shadow-sm hover:bg-b hover:text-v transition-all duration-300"
               title="Précédent"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,7 +74,7 @@ export default function Cards() {
             </button>
             <button 
               onClick={() => handleScroll("right")}
-              className="p-3 bg-white border border-emerald-100 rounded-full shadow-sm hover:bg-emerald-500 hover:text-white transition-all"
+              className="p-3  bg-v text-b border border-emerald-100 rounded-full shadow-sm hover:bg-b hover:text-v transition-all duration-300"
               title="Suivant"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
