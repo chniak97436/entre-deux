@@ -6,7 +6,7 @@ import Footer from "../components/Footer.js";
 import Iris from "../components/Iris";
 import Cards from "../components/Cards";
 import AlaUne from "../components/A-la-une.js";
-
+import NewsLetters from "../components/NewsLetters";
 
 export default function Home() {
   return (
@@ -33,12 +33,16 @@ export default function Home() {
           <hr className="my-6 text-b/90" />
 
         </main>
+
         <Iris />
-          <Cards />
+
+        <Cards />
+
+        <NewsLetters />
 
 
-          <div className="prose max-w-none">
-          </div>
+        <div className="prose max-w-none">
+        </div>
         <Iris />
         <Footer />
       </div>
