@@ -29,15 +29,15 @@ export default function ArowBack() {
 
   return (
     <>
-      <div className="w-7 h-7 md:w-10 md:h-10 flex justify-center items-center text-xl bg-b text-v transition duration-300 hover:bg-v hover:text-b rounded-full z-50 fixed right-1 bottom-5 sm:bottom-10 lg:bottom-15"
+      <div className="w-7 h-7 md:w-10 md:h-10 flex justify-center items-center text-xl bg-v text-b transition duration-300 hover:bg-b hover:text-v rounded-full z-50 fixed right-1 bottom-5 sm:bottom-10 lg:bottom-15"
         onClick={() => forward()}>
         <ChevronsLeft className="w-5 md:w-8"/>
       </div>
-      <div className="w-7 h-7 md:w-10 md:h-10 flex justify-center items-center text-xl bg-b text-v transition duration-300 hover:bg-v hover:text-b rounded-full z-50 fixed right-1 bottom-17 sm:bottom-22 lg:bottom-27 cursor-pointer"
+      <div className="w-7 h-7 md:w-10 md:h-10 flex justify-center items-center text-xl bg-v text-b transition duration-300 hover:bg-b hover:text-v rounded-full z-50 fixed right-1 bottom-17 sm:bottom-22 lg:bottom-27 cursor-pointer"
         onClick={handleMapClick}>
         <MapPinned className="w-5 md:w-8"/>
       </div>
-      <div className="w-7 h-7 md:w-10 md:h-10 flex justify-center items-center text-xl bg-b text-v transition duration-300 hover:bg-v hover:text-b rounded-full z-50 fixed right-1 bottom-29 sm:bottom-34 lg:bottom-39">
+      <div className="w-7 h-7 md:w-10 md:h-10 flex justify-center items-center text-xl bg-v text-b transition duration-300 hover:bg-b hover:text-v rounded-full z-50 fixed right-1 bottom-29 sm:bottom-34 lg:bottom-39">
         <Link href="/mail"><Mail className="w-5 md:w-8"/></Link>
       </div>
     </>
