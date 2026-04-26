@@ -7,6 +7,7 @@ import Iris from "../components/Iris";
 import Cards from "../components/Cards";
 import AlaUne from "../components/A-la-une.js";
 import NewsLetters from "../components/NewsLetters";
+import Video from "../components/Video";
 
 export default function Home() {
   return (
@@ -40,11 +41,14 @@ export default function Home() {
 
         <NewsLetters />
 
-
-        <div className="prose max-w-none">
-        </div>
         <Iris />
+
+        <Video />
+
+        <Iris />
+
         <Footer />
+
       </div>
     </div>
   );
