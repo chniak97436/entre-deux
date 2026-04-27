@@ -80,7 +80,7 @@ export default function NavBar() {
                         </span>
                       </div>
                       <div
-                        className={`flex flex-col absolute z-50 right-0 left-auto top-full mt-1 -left-72 md:-left-64 lg:-left-48 origin-top-left w-56 md:w-64 lg:w-72 xl:w-80 max-w-[90vw] min-w-52 bg-[#d8fcfcd8] backdrop-blur-sm shadow-2xl shadow-emerald-400/30 border border-[#b2fdfd] animate-in fade-in zoom-in-95 ${submenuOpen === item.name ? 'block' : 'hidden'}`}
+                        className={`flex flex-col absolute z-50 right-0 left-auto top-full   md:-left-64 lg:-left-48 origin-top-left w-56 md:w-64 lg:w-72 xl:w-80 max-w-[90vw] min-w-52 bg-[#d8fcfcd8] backdrop-blur-sm shadow-2xl shadow-emerald-400/30 border border-[#b2fdfd] animate-in fade-in zoom-in-95 ${submenuOpen === item.name ? 'block' : 'hidden'}`}
                       >
                         {item.submenu.map((sub, subIndex) => (
                           <Link
