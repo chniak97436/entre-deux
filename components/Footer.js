@@ -16,7 +16,7 @@ export default function Footer() {
       </div>
       <div className='w-full flex flex-col md:w-1/3 justify-center items-center text-center text-sm text-v'>
         <p className='font-bold'>Commune de L'Entre-Deux</p>
-        <p>2 Rue Fortune Hoarau<br/> 97414 Entre-Deux</p>
+        <p>2 Rue Fortune Hoarau,<br/> 97414 Entre-Deux</p>
         <p>Tél : 02 62 24 80 00</p>
         <p>Fax : 02 62 24 80 01</p>
         

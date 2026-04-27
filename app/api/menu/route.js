@@ -15,9 +15,18 @@ export async function GET() {
             submenu: [
                 { name: 'Portail petite enfance', href: '/enfance/portail' },
                 { name: 'Les écoles', href: '/enfance/ecoles' },
+                { name: 'La caisse des écoles', href: '/enfance/caisse' },
+                { name: 'Restauration scolaire', href: '/enfance/restauration' },
+                { name: 'Pendant les vaccances', href: '/enfance/vaccances' }
             ]
         },
-        { name: 'Agenda et Actualités', href: '/evenements' },
+        { name: 'Agenda et Actualités', href: '/evenements',
+            submenu: [
+                { name: 'Agenda', href: '/evenements/agenda' },
+                { name: 'Actualités', href: '/evenements/actualites' },
+                { name: 'L Argamasse', href: '/evenements/argamasse' }
+            ]
+         },
         { name: "Sortie à l'Entre-Deux", href: '/services' },
         { name: 'Divertissement', href: '/divertissement' },
         { name: 'Innovations', href: '/innovations' }

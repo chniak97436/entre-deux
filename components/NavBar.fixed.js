@@ -73,7 +73,7 @@ export default function NavBar() {
                       <div className="flex items-center justify-between p-3 font-bold text-b border border-transparent hover:border-[#8bfdfd] hover:bg-white/50 transition-all cursor-pointer active:bg-white/30">
                         <ChevronDown
                           size={18}
-                          className={`transition-transform duration-300 ml-2 ${submenuOpen === item.name ? '-rotate-90' : ''} text-b`}
+                          className={`transition-transform duration-300 ml-2 ${submenuOpen === item.name ? 'rotate-90' : ''} text-b`}
                         />
                         <span className="flex-1 font-bold text-b text-sm md:text-2xl">
                           {item.name}
