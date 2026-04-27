@@ -6,11 +6,18 @@ import { ChevronDown } from 'lucide-react';
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [submenuOpen, setSubmenuOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(null);
+  const [menuItems, setMenuItems] = useState([]);
 
-  // Ferme submenu si menu principal ferme
   useEffect(() => {
-    if (!isOpen) setSubmenuOpen(false);
+    fetch('/api/menu')
+      .then((res) => res.json())
+      .then((data) => setMenuItems(data))
+      .catch((err) => console.error('Erreur fetch menu:', err));
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) setSubmenuOpen(null);
   }, [isOpen]);
 
   return (
@@ -53,118 +60,54 @@ export default function NavBar() {
         {isOpen && (
           <div className="w-screen mt-14 text-center z-40 p-2 fade-in-0 zoom-in-95 duration-500">
             <nav className="w-2.5/5 bg-[#d8fcfcd8] fixed right-0 space-y-0 px-0.5 md:w-1/3 lg:w-1/3">
-              {/* ITEM AVEC SOUS-MENU & FLÈCHE */}
-              <div
-                className="relative group"
-                onClick={() => setSubmenuOpen(!submenuOpen)}
-                onTouchStart={() => setSubmenuOpen(true)}
-              >
-                <div className="flex items-center justify-between p-3 font-bold text-b border border-transparent hover:border-[#8bfdfd] hover:bg-white/50 transition-all cursor-pointer active:bg-white/30">
-                  <ChevronDown
-                    size={18}
-                    className={`transition-transform duration-300 ml-2 ${submenuOpen ? '-rotate-90' : ''} text-b`}
-                  />
-                  <h1
-                    href="#"
-                    className="flex-1 font-bold text-b text-sm md:text-2xl"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      submenuOpen ? setSubmenuOpen(false) : setSubmenuOpen(true);
-                    }}
-                  >
-                    La Mairie
-                  </h1>
-
+              {menuItems.map((item, index) => (
+                <div key={index}>
+                  {item.submenu && item.submenu.length > 0 ? (
+                    <div
+                      className="relative group"
+                      onClick={() =>
+                        setSubmenuOpen(submenuOpen === item.name ? null : item.name)
+                      }
+                      onTouchStart={() => setSubmenuOpen(item.name)}
+                    >
+                      <div className="flex items-center justify-between p-3 font-bold text-b border border-transparent hover:border-[#8bfdfd] hover:bg-white/50 transition-all cursor-pointer active:bg-white/30">
+                        <ChevronDown
+                          size={18}
+                          className={`transition-transform duration-300 ml-2 ${submenuOpen === item.name ? '-rotate-90' : ''} text-b`}
+                        />
+                        <span className="flex-1 font-bold text-b text-sm md:text-2xl">
+                          {item.name}
+                        </span>
+                      </div>
+                      <div
+                        className={`flex flex-col absolute z-50 right-0 left-auto top-full mt-1 -left-72 md:-left-64 lg:-left-48 origin-top-left w-56 md:w-64 lg:w-72 xl:w-80 max-w-[90vw] min-w-52 bg-[#d8fcfcd8] backdrop-blur-sm shadow-2xl shadow-emerald-400/30 border border-[#b2fdfd] animate-in fade-in zoom-in-95 ${submenuOpen === item.name ? 'block' : 'hidden'}`}
+                      >
+                        {item.submenu.map((sub, subIndex) => (
+                          <Link
+                            key={subIndex}
+                            href={sub.href}
+                            className="block px-2 py-2 font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98] text-b"
+                            onClick={() => {
+                              setIsOpen(false);
+                              setSubmenuOpen(null);
+                            }}
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block px-2 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </div>
-                {/* SOUS-MENU - Style coherent avec main menu, left border, responsive */}
-                <div className={`flex flex-col absolute z-50 right-0 left-auto top-full mt-1 -left-72 md:-left-64 lg:-left-48 origin-top-left w-56 md:w-64 lg:w-72 xl:w-80 max-w-[90vw] min-w-52 bg-[#d8fcfcd8] backdrop-blur-sm shadow-2xl shadow-emerald-400/30 border border-[#b2fdfd] animate-in fade-in zoom-in-95 ${submenuOpen ? 'block' : 'hidden'}`}>
-                  <Link
-                    href="/mairie/elus"
-                    className="block px-2 py-2 font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98] text-b"
-                    onClick={() => {
-                      setIsOpen(false);
-                      setSubmenuOpen(false);
-                    }}
-                  >
-                    Le Maire et les Elus
-                  </Link>
-                  <Link
-                    href="/mairie/histoire"
-                    className="block px-2 py-2 font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98] text-b"
-                    onClick={() => {
-                      setIsOpen(false);
-                      setSubmenuOpen(false);
-                    }}
-                  >
-                    Les conseils municipaux
-                  </Link>
-                  <Link
-                    href="/mairie/demarches"
-                    className="block px-2 py-2 font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98] text-b"
-                    onClick={() => {
-                      setIsOpen(false);
-                      setSubmenuOpen(false);
-                    }}
-                  >
-                    Urbanisme
-                  </Link>
-                  <Link
-                    href="/mairie/demarches"
-                    className="block px-2 py-2 font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98] text-b"
-                    onClick={() => {
-                      setIsOpen(false);
-                      setSubmenuOpen(false);
-                    }}
-                  >
-                    Démarches administratives
-                  </Link>
-                </div>
-              </div>
-
-              <Link
-                href="/actualites"
-                className="block px-2 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
-                onClick={() => setIsOpen(false)}
-              >
-                <h1
-                  href="#"
-                  className="flex-1 font-bold text-b text-center ml-4 text-sm md:text-2xl"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    submenuOpen ? setSubmenuOpen(false) : setSubmenuOpen(true);
-                  }}
-                >
-                  Enfance
-                </h1>
-              </Link>
-              <Link
-                href="/evenements"
-                className="block px-1 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
-                onClick={() => setIsOpen(false)}
-              >
-                Agenda et Actualités
-              </Link>
-              <Link
-                href="/services"
-                className="block px-2 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
-                onClick={() => setIsOpen(false)}
-              >
-                Sortie à l Entre-Deux
-              </Link>
-              <Link
-                href="/contact"
-                className="block px-2 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
-                onClick={() => setIsOpen(false)}
-              >
-                Divertissement
-              </Link>
-              <Link
-                href="/contact"
-                className="block px-2 py-2 font-bold text-sm md:text-xl lg:text-2xl xl:text-4xl border border-[#b2fdfd]/60 hover:border-[#8bfdfd] hover:bg-[#d8fcfcd8]/80 hover:shadow-lg hover:shadow-emerald-200/50 hover:scale-[1.02] transition-all duration-200 active:scale-[0.98]"
-                onClick={() => setIsOpen(false)}
-              >
-                Innovations
-              </Link>
+              ))}
             </nav>
           </div>
         )}
@@ -172,3 +115,4 @@ export default function NavBar() {
     </nav>
   );
 }
+
